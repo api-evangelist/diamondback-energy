@@ -1,0 +1,81 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Live HTTPS probes of every host this record knows — the registrable domain, www,
+  and the investor-relations host. Diamondback Energy registers no API baseURL and
+  no OpenAPI servers[] host, so those host classes do not exist for this provider.
+  All requests were sent with a full desktop-browser header set: the Akamai edge in
+  front of these hosts returns HTTP 403 ("Access Denied", errors.edgesuite.net) to a
+  bare crawler User-Agent, which would otherwise have been misread as a wall rather
+  than an absence.
+note: >-
+  Nothing was served. Every /.well-known/ path either 404s from the Drupal-based
+  Q4/gcs-web investor site or is refused outright by the Akamai edge, which does not
+  pass /.well-known/*.json requests through to the origin at all. No WellKnown or
+  SecurityTxt pointer is emitted in apis.yml, because this file documents an absence
+  and a pointer would assert a presence.
+hosts:
+  - host: www.diamondbackenergy.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: ir.diamondbackenergy.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: diamondbackenergy.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 0
+        file: null
+    note: >-
+      The apex domain publishes no A/AAAA record — dig returns nothing — so no probe
+      of it can resolve. Status 0 means "no connection", not "not found". The company
+      serves everything from www. and ir., both CNAMEd to diamondbackenergy.gcs-web.com.

@@ -5,9 +5,14 @@ description: >-
   Diamondback Energy is an independent oil and natural gas company focused on the
   acquisition, development, exploration, and exploitation of unconventional, onshore
   oil and natural gas reserves in the Permian Basin of West Texas. As a Fortune 500
-  company in the upstream energy sector, Diamondback does not currently publish a
-  public developer portal or APIs; this repository is maintained as a placeholder
-  for any APIs, developer tools, or machine-readable artifacts that may emerge.
+  company in the upstream energy sector, Diamondback publishes no developer portal,
+  no API, and no machine-readable contract of any kind; its entire web presence is a
+  Q4/gcs-web investor-relations site, and owner joint-interest billing and revenue
+  check detail are delivered through the third-party EnergyLink portal rather than a
+  first-party interface. The only machine-readable surfaces it serves are three RSS
+  feeds on the IR platform — news releases, events and SEC filings. This repository
+  is maintained as a placeholder for any APIs, developer tools, or machine-readable
+  artifacts that may emerge.
 deliveryModel:
   model: unknown
   open_source: false
@@ -39,8 +44,12 @@ tags:
   - Oil and Gas
   - Fortune 500
   - Permian Basin
+  - Upstream
+  - Exploration and Production
+  - Natural Gas
+  - Investor Relations
 created: '2026-03-21'
-modified: '2026-04-28'
+modified: '2026-09-06'
 specificationVersion: '0.23'
 apis: []
 common:
@@ -50,6 +59,42 @@ common:
     url: https://www.linkedin.com/company/diamondbackenergy
   - type: Website
     url: https://www.diamondbackenergy.com
+  - type: Blog
+    url: https://www.diamondbackenergy.com/investors/press-releases
+  - type: BlogRSS
+    url: https://www.diamondbackenergy.com/rss/news-releases.xml
+  - type: Support
+    url: https://www.diamondbackenergy.com/contact-us/overview
+  - type: PrivacyPolicy
+    url: https://www.diamondbackenergy.com/site-info/privacy-policy
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Diamondback is a Permian Basin oil and gas producer whose entire web presence is a
+    Q4/gcs-web investor-relations site with no developer section; owner joint-interest
+    billing and revenue check detail are handed off to the third-party EnergyLink portal,
+    and no api. or developer. subdomain resolves in DNS.
+  evidence:
+    - url: https://www.diamondbackenergy.com/
+      status: 200
+    - url: https://www.diamondbackenergy.com/api-docs
+      status: 404
+    - url: https://www.diamondbackenergy.com/.well-known/api-catalog
+      status: 404
+    - url: https://www.diamondbackenergy.com/.well-known/agent-card.json
+      status: 403
+    - url: https://www.diamondbackenergy.com/openapi.json
+      status: 403
+    - url: https://www.diamondbackenergy.com/owner-relations
+      status: 200
+  checked: '2026-09-06'
