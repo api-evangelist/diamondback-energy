@@ -1,0 +1,15 @@
+{
+  "repo": "diamondback-energy",
+  "feeds": [
+    {
+      "source": "https://www.diamondbackenergy.com",
+      "error": "TimeoutError"
+    },
+    {
+      "source": "https://www.diamondbackenergy.com/investors/press-releases",
+      "error": "TimeoutError"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-09-06T19:17:18Z"
+}
